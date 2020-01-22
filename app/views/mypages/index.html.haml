@@ -1,0 +1,201 @@
+.mypage
+  .header
+    = render "/items/header"
+
+  .mypage_panbox
+
+  .mypage__main
+    .mypage__main__margin
+      .mypage__main__margin__left 
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.bold-color
+            = link_to "/mypages" ,class:"mypage-text" do
+              マイページ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お知らせ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              やることリスト
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              いいね！一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品する
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 出品中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 売却済み
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 過去の取引
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ニュース一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              評価一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ガイド
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お問い合わせ
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head メルペイ
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              残高・振込申請
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ポイント
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head 設定
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to edit_user_path(current_user) ,class:"mypage-text" do
+              プロフィール
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              発生元・お届け先住所変更
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to card_index_path ,class:"mypage-text" do
+              支払い方法
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              メール/パスワード
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages/identification" ,class:"mypage-text" do
+              本人情報
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              電話番号の確認
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages/logout" ,class:"mypage-text" do
+              ログアウト
+              = icon('fas', 'chevron-right',  class: "right")
+
+
+      .mypage__main__margin__right
+        .mypage__main__margin__right__header
+          .mypage__main__margin__right__header__image
+            = link_to "#" , class:"mypage-header" do
+              = icon('fas', 'user-circle', class: "human-icon")
+              .mypage__main__margin__right__header__image__user
+                = current_user.nickname
+              .mypage__main__margin__right__header__image__text
+                .mypage__main__margin__right__header__image__text__eva 評価 xx
+                .mypage__main__margin__right__header__image__text__ex 出品数 xx
+        
+        
+        
+        .mypage__main__margin__right__news
+          %ul.mypage__main__margin__right__news__text
+            %li.mypage__main__margin__right__news__text__le.is-active
+              お知らせ
+            %li.mypage__main__margin__right__news__text__le
+              やることリスト
+          .mypage__main__margin__right__news__main
+            .mypage__main__margin__right__news__main__ul.is-show
+              .mypage__main__margin__right__news__main__ul__box.a
+                .mypage__main__margin__right__news__main__ul__box__image
+                  = image_tag "logo_red.svg",class:"image-size-tag"
+                .mypage__main__margin__right__news__main__ul__box__text
+                  .mypage__main__margin__right__news__main__ul__box__text__top 事務局から個別メッセージ「Googleログイン通知」
+                  .mypage__main__margin__right__news__main__ul__box__text__under
+                    = icon('far', 'clock', class: "clock-icon")
+                    1日前
+                = icon('fas', 'chevron-right',  class: "right-box")
+              .mypage__main__margin__right__news__main__ul__box.a
+                .mypage__main__margin__right__news__main__ul__box__image
+                  = image_tag "logo_red.svg",class:"image-size-tag"
+                .mypage__main__margin__right__news__main__ul__box__text
+                  .mypage__main__margin__right__news__main__ul__box__text__top 事務局から個別メッセージ「Googleログイン通知」
+                  .mypage__main__margin__right__news__main__ul__box__text__under
+                    = icon('far', 'clock', class: "clock-icon")
+                    1日前
+                = icon('fas', 'chevron-right',  class: "right-box")
+              .mypage__main__margin__right__news__main__ul__box
+                .mypage__main__margin__right__news__main__ul__box__color.b
+                  一覧を見る
+                
+            .mypage__main__margin__right__news__main__ul
+              .mypage__main__margin__right__news__main__ul__box.a
+                .mypage__main__margin__right__news__main__ul__box__image
+                  = image_tag "logo_red.svg",class:"image-size-tag"
+                .mypage__main__margin__right__news__main__ul__box__text
+                  .mypage__main__margin__right__news__main__ul__box__text__top 事務局から個別メッセージ「Googleログイン通知」
+                  .mypage__main__margin__right__news__main__ul__box__text__under
+                    = icon('far', 'clock', class: "clock-icon")
+                    1日前
+                = icon('fas', 'chevron-right',  class: "right-box")
+              .mypage__main__margin__right__news__main__ul__box
+                .mypage__main__margin__right__news__main__ul__box__color.b
+                  一覧を見る
+
+          .mypage__main__margin__right__news__footer
+            .mypage__main__margin__right__news__footer__header 購入した商品
+
+            %ul.mypage__main__margin__right__news__footer__text
+              %li.mypage__main__margin__right__news__footer__text__le.ls-active
+                取引中
+              %li.mypage__main__margin__right__news__footer__text__le
+                過去の取引
+            .mypage__main__margin__right__news__footer__main
+              .mypage__main__margin__right__news__footer__main__ul.le-show
+                .mypage__main__margin__right__news__footer__main__ul__box.height.padding
+                  = image_tag 'logo_gray.svg' ,class:"backimage-size"
+                  .mypage__main__margin__right__news__footer__main__ul__box__no
+                    取引中の商品がありません
+              .mypage__main__margin__right__news__footer__main__ul
+                .mypage__main__margin__right__news__main__ul__box.a
+                  .mypage__main__margin__right__news__main__ul__box__image
+                    = image_tag "logo_red.svg",class:"image-size-tag"
+                  .mypage__main__margin__right__news__main__ul__box__text
+                    .mypage__main__margin__right__news__main__ul__box__text__top 「PEACE ワックス 80g」を購入しました。取引が完了しました。
+                    .mypage__main__margin__right__news__main__ul__box__text__under
+                      .mypage__main__margin__right__news__main__ul__box__text__under__box
+                        取引完了
+                  = icon('fas', 'chevron-right',  class: "right-boxes")
+                .mypage__main__margin__right__news__main__ul__box
+                  .mypage__main__margin__right__news__main__ul__box__color.b
+                    一覧を見る
+  
+  .main__bottom
+    = render "/items/bottom"
+  .main__footer
+    = render "/items/footer"
+  .main__saleButton
+    = link_to new_items_path do
+      = image_tag "salebutton2.png",class:"sale-size"
+

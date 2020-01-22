@@ -1,0 +1,191 @@
+.main_flame
+  .header
+    = render "header"
+  .main__item__boxs
+    .detail__main
+      .detail__main__box
+        .detail__main__box__flame
+          %h3.detail__main__box__flame__title 
+            =@item.name
+          .detail__main__box__flame__content
+            .detail__main__box__flame__content__sub
+              .detail__main__box__flame__content__sub__itemphoto
+                .detail__main__box__flame__content__sub__itemphoto__mainphoto
+                  = image_tag @item.images[0].image_url, class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'
+                  //= image_tag @item.images[0].image,size: "180x300"
+                  //= link_to image_tag('jeans.jpg',width:'180', height:'300')     
+                .detail__main__box__flame__content__sub__itemphoto__subphoto
+                  - if @item.images[0].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[0].image_url, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'
+                  - if @item.images[1].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[1].image_url, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'
+                  - if @item.images[2].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[2].image_url, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'             
+              .detail__main__box__flame__content__sub__table
+                %table.tbody{border:"1"}
+                  %tr
+                    %th 出品者
+                    %td
+                      = link_to '#' do
+                        =@item.saler.nickname
+                      .item-user-rating
+                        .item-user-rating__1
+                          %i.fas.fa-laugh.laugh
+                          %span 160
+                        .item-user-rating__2
+                          %i.far.fa-meh.normal
+                          %span 10
+                        .item-user-rating__3
+                          %i.far.fa-frown.bad
+                          %span 2
+                  %tr
+                    %th カテゴリー
+                    %td
+                      = link_to '#' do
+                        = @categorygrandparent.name
+                      %br
+                      = link_to '#' do
+                        ＞ #{@categoryparent.name}
+                      %br
+                      = link_to  '#' do
+                        ＞ #{@item.category.name}
+                  %tr
+                    %th ブランド
+                    %td 
+                      = link_to '#' do
+                        = @item.brandname
+                  %tr
+                    %th 商品のサイズ
+                    %td 
+                      = @item.size
+                  %tr
+                    %th 商品の状態
+                    %td
+                      = @item.condition
+                  %tr
+                    %th 配送料の負担
+                    %td
+                      = @item.burden
+                  %tr
+                    %th 配送の方法
+                    %td ゆうゆうメルカリ便
+                  %tr
+                    %th 配送元地域
+                    %td
+                      = @item.region
+                  %tr
+                    %th 配送日の目安
+                    %td
+                      = @item.sending_days
+            .detail__main__box__flame__content__itemprice
+              %span.detail__main__box__flame__content__itemprice__price ¥#{@item.price.to_s(:delimited)}
+              %span.detail__main__box__flame__content__itemprice__tax (税込)
+              %span.detail__main__box__flame__content__itemprice__shipfree 送料込み
+            -unless current_user.id == @item.saler_id
+              = link_to logout_path, method: :get,class:'detail__main__box__flame__content__item-buy-btn' do
+                購入画面に進む
+              .detail__main__box__flame__content__itemdescription
+                %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
+              .detail__main__box__flame__content__mainitemdescription
+                %p.detail__main__box__flame__content__mainitemdescription__inner 
+                =@item.body
+              .detail__main__box__flame__content__item-btn-container
+                .detail__main__box__flame__content__item-btn-container__item-btn-left 
+                  %button.detail__main__box__flame__content__item-btn-container__item-btn-left__good
+                    %i.fa.fa-heart.heart
+                    %span いいね！
+                    %span.like-num 2
+                  = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-left__nogood' do
+                    %span 不適切な商品の報告
+                .detail__main__box__flame__content__item-btn-container__item-btn-right
+                  = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-right__safety' do
+                    %i.fa.fa-lock
+                    %span あんしん・あんぜんへの取り組み
+            - else
+              .detail__main__box__flame__content__mainitemdescription
+                %p.detail__main__box__flame__content__mainitemdescription__inner 
+                =@item.body
+              = link_to logout_path, method: :get, class:'detail__main__box__flame__content__item-edit-btn' do
+                商品の編集
+              %p.detail__main__box__flame__content__itemdescription__text-center or
+              = link_to destroy_path, method: :delete, class:'detail__main__box__flame__content__item-delete-btn' do
+                この商品を削除する
+              .detail__main__box__flame__content__item-btn-container
+      .detail__main__message
+        .detail__main__message__box
+          %p.detail__main__message__box__caution 相手のことを考え丁寧なコメントを心がけましょう。不快にな言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea{type: "text", class: "detail__main__message__box__text"}
+          %button{type: "submit", class: "detail__main__message__box__sendbtn"} コメントする
+      %ul.detail__main__link
+        %li.detail__main__link__left
+          =link_to '#',class:'detail__main__link__left__prev' do
+            %i.fa.fa-chevron-left.leftarrow
+            .detail__main__link__left__prev__detail 
+            ベスパ   ヴェスパ   キーホルダー   
+            %br イタリア ベスパより購入
+        %li.detail__main__link__right
+          =link_to '#',class:'detail__main__link__right__next' do
+            .detail__main__link__right__next__detail
+            静電気除電(1連)トリプルクローバープレス
+            %i.fa.fa-chevron-right.rightarrow
+      .detail__main__flame
+        .detail__main__flame__social-media-box
+          .detail__main__flame__social-media-box__text-center
+          %ul.detail__main__flame__social-media-box__box
+            %li.detail__main__flame__social-media-box__box__facebook
+              = link_to '#' do
+                %i.fab.fa-facebook-square.facebook
+            %li.detail__main__flame__social-media-box__box__twitter
+              = link_to '#' do
+                %i.fab.fa-twitter-square.twitter
+            %li.detail__main__flame__social-media-box__box__pinterest
+              = link_to '#' do
+                %i.fab.fa-pinterest-square.pinterest
+      .detail__main__user-profile
+        .detail__main__user-profile__box
+          = link_to "#" , class:'detail__main__user-profile__box__link' do
+            %p.detail__main__user-profile__box__link__title #{@item.saler.nickname}さんのその他の出品
+            %ul.detail__main__user-profile__box__itembox
+              - @items.each do |item|
+                - if item.saler_id === @item.saler_id
+                  %li.detail__main__user-profile__box__itembox__goods
+                    .detail__main__user-profile__box__itembox__goods__ind
+                      =link_to "/items/#{item.id}", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
+                        .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
+                          = image_tag item.images[0].image_url, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
+                        %p.detail__main__user-profile__box__itembox__goods__ind__link__description
+                          = item.name
+                        .detail__main__user-profile__box__itembox__goods__ind__link__price ¥#{item.price.to_s(:delimited)}
+                        .detail__main__uer-profile__box__itembox__goods__ind__link__rating{style:"text-align:right"}
+                          %i.far.fa-heart.heart2
+                          %span.detail__main__user-profile__box__itembox__goods__ind__link__rating__value 2
+      .detail__main__user-profile
+        .detail__main__user-profile__box
+          = link_to "#" , class:'detail__main__user-profile__box__link' do
+            %p.detail__main__user-profile__box__link__title #{@item.category.name}のその他の出品
+            .detail__main__user-profile__box__itembox
+              - @items.each do |item|
+                - unless item.id === @item.id
+                  - if item.category_id === @item.category_id
+                    .detail__main__user-profile__box__itembox__goods
+                      .detail__main__user-profile__box__itembox__goods__ind
+                        =link_to "/items/#{item.id}", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
+                          .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
+                            =image_tag item.images[0].image_url, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
+                          %p.detail__main__user-profile__box__itembox__goods__ind__link__description
+                            = item.name
+                          .detail__main__user-profile__box__itembox__goods__ind__link__price ¥#{item.price.to_s(:delimited)}
+                          .detail__main__uer-profile__box__itembox__goods__ind__link__rating{style:"text-align:right"}
+                            %i.far.fa-heart.heart2
+                            %span.detail__main__user-profile__box__itembox__goods__ind__link__rating__value 2
+      .detail__main__bread-crumbs
+        %ul.detail__main__bread-crumbs__list
+          %li.detail__main__bread-crumbs__list__catogry1 メルカリ >
+          %li.detail__main__bread-crumbs__list__catogry2 ジーンズ（レディース）          
+  .main__bottom
+    = render "bottom"
+  .main__footer
+    = render "footer"

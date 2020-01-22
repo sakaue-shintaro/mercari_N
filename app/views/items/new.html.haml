@@ -1,0 +1,178 @@
+.head
+.main
+  .main__contets
+    .main__contents__header
+      .main__contents__header__logo
+        =link_to ".." do
+          = image_tag  "fmarket_logo_red.svg",class:"logo"
+    .main__contents__item
+      .main__contents__item__bottom
+        .main__contents__item__bottom__box
+          .main__contents__item__bottom__box__head 商品の情報を入力
+          = form_for (@item) do |f|
+            .main__contents__item__bottom__box__head__form
+              .main__contents__item__bottom__box__head__form__box
+                .main__contents__item__bottom__box__head__form__box__text
+                  .main__contents__item__bottom__box__head__form__box__text__cover 商品画像
+                  .main__contents__item__bottom__box__head__form__box__text__logo 必須
+                .main__contents__item__4rbottom__box__head__form__box__text__texts 最大10枚までアップロードできます
+              .main__contents__item__bottom__box__head__form__upload
+                .main__contents__item__bottom__box__head__form__upload__box
+                  .main__contents__item__bottom__box__head__form__upload__box__item
+                    %ul#image-box-1.clearfix
+                      %li.item-num-0#image-box__container
+                        = f.fields_for :images do |i|
+                          = i.label :image, for: "img-file" do
+                            .input-area
+                              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", id:"img-file" 
+                              .input-area__text
+                                ドラッグアンドドロップ
+                                %br
+                                またはクリックしてファイルをアップロード
+            .main__contents__item__bottom__box__head__form__goods
+              .main__contents__item__bottom__box__head__form__goods__name
+                .main__contents__item__bottom__box__head__form__goods__name__label 商品名
+                .main__contents__item__bottom__box__head__form__goods__name__label__logo 必須
+              .main__contents__item__bottom__box__head__form__goods__name__box
+                = f.text_field :name, placeholder: "商品名（必須40文字まで）", type: "text", max_length: 40, class: "name-box", id: "new_item"
+              .main__contents__item__bottom__box__head__form__goods__explain
+                .main__contents__item__bottom__box__head__form__goods__explain__label 商品の説明
+                .main__contents__item__bottom__box__head__form__goods__explain__label__logo 必須
+              .main__contents__item__bottom__box__head__form__goods__explain__box
+                = f.text_area :body, placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class: "explain-box"
+            .main__contents__item__bottom__box__head__form__goods__detail
+              .main__contents__item__bottom__box__head__form__goods__detail__label 商品の詳細
+              .main__contents__item__bottom__box__head__form__goods__detail__group
+                .main__contents__item__bottom__box__head__form__goods__detail__group__category
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover カテゴリー
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__detail__group__add
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__add__select
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box
+                      .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box__bottom
+                      = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { prompt: '---' },{id: "parent_category"}
+                .main__contents__item__bottom__box__head__form__goods__detail__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover 商品の状態
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__detail__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom
+                      = f.select :condition, Item.conditions.keys.to_a, { include_blank: "---" }, {id:"size_category"}
+            .main__contents__item__bottom__box__head__form__goods__delivery
+              .main__contents__item__bottom__box__head__form__goods__delivery__label 配送について
+              =link_to "#",class:"main__contents__item__bottom__box__head__form__goods__delivery__question"do
+                ?
+              .main__contents__item__bottom__box__head__form__goods__delivery__group
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__category
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__category__cover 配送料の負担
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__category__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__select
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box__bottom
+                      = f.select :burden, Item.burdens.keys, { include_blank: "---" }
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送元の地域
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
+                    = f.select :region, nil,{ prompt: '---' } do
+                      %option{value:"北海道"}北海道
+                      %option{value:"青森"}青森
+                      %option{value:"岩手"}岩手
+                      %option{value:"宮城"}宮城
+                      %option{value:"秋田"}秋田
+                      %option{value:"山形"}山形
+                      %option{value:"福島"}福島
+                      %option{value:"茨城"}茨城
+                      %option{value:"栃木"}栃木
+                      %option{value:"群馬"}群馬
+                      %option{value:"埼玉"}埼玉
+                      %option{value:"千葉"}千葉
+                      %option{value:"東京"}東京
+                      %option{value:"神奈川"}神奈川
+                      %option{value:"新潟"}新潟
+                      %option{value:"富山"}富山
+                      %option{value:"石川"}石川
+                      %option{value:"福井"}福井
+                      %option{value:"山梨"}山梨
+                      %option{value:"長野"}長野
+                      %option{value:"岐阜"}岐阜
+                      %option{value:"静岡"}静岡
+                      %option{value:"愛知"}愛知
+                      %option{value:"三重"}三重
+                      %option{value:"滋賀"}滋賀
+                      %option{value:"京都"}京都
+                      %option{value:"大阪"}大阪
+                      %option{value:"兵庫"}兵庫
+                      %option{value:"奈良"}奈良
+                      %option{value:"和歌山"}和歌山
+                      %option{value:"鳥取"}鳥取
+                      %option{value:"島根"}島根
+                      %option{value:"岡山"}岡山
+                      %option{value:"広島"}広島
+                      %option{value:"山口"}山口
+                      %option{value:"徳島"}徳島
+                      %option{value:"香川"}香川
+                      %option{value:"愛媛"}愛媛
+                      %option{value:"高知"}高知
+                      %option{value:"福岡"}福岡
+                      %option{value:"佐賀"}佐賀
+                      %option{value:"長崎"}長崎
+                      %option{value:"熊本"}熊本
+                      %option{value:"大分"}大分
+                      %option{value:"宮崎"}宮崎
+                      %option{value:"鹿児島"}鹿児島
+                      %option{value:"沖縄"}沖縄
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送までの日数
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
+                    = f.select :sending_days, nil,{ prompt: '---' } do
+                      %option{value:"1〜2日で発送"}1〜2日で発送
+                      %option{value:"2〜3日で発送"}2〜3日で発送
+                      %option{value:"4〜7日で発送"}4〜7日で発送
+            .main__contents__item__bottom__box__head__form__goods__price
+              .main__contents__item__bottom__box__head__form__goods__price__label 販売価格(300〜9,999,999)
+              =link_to "#",class:"main__contents__item__bottom__box__head__form__goods__price__question"do
+                ?
+              .main__contents__item__bottom__box__head__form__goods__price__group
+                .main__contents__item__bottom__box__head__form__goods__price__group__category
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__box
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom
+                      .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover__text 価格
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover__logo 必須
+                      .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en 
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en__left ¥
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en__input
+                          = f.text_field :price, {placeholder: "例）300", class: "price-box"}
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__commission
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__left
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__left__text 販売手数料 (10%)
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__right -
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__profit
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__profit__left 販売利益
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__profit__right -
+            .main__contents__item__bottom__box__head__form__goods__precaution
+              .main__contents__item__bottom__box__head__form__goods__precaution__box
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  =link_to '禁止されている商品',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  =link_to '行為',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  を必ずご確認ください。
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  またブランド品でシリアルナンバー等がある場合はご記載ください
+                  =link_to '偽ブランドの販売',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  は犯罪であり処罰される可能性があります。
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  また、出品をもちまして
+                  =link_to '加盟店規約',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  に同意したことになります。
+              %button.btn__default.btn--red
+                = f.hidden_field :status, value:'0'
+                = f.submit "出品する", class: "submit__button"
+              = link_to root_path, class: "btn--gray"do
+                もどる
+  = render "signup/footer"

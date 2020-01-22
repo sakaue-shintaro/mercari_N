@@ -1,0 +1,14 @@
+.header
+  = render "header"
+.body_main
+  .slideshow
+    = render "slideshow"
+.main__item
+  = render "itemlist"
+.main__saleButton
+  = link_to "/items/new" do
+    = image_tag "salebutton2.png",class:"sale-size"
+.main__bottom
+  = render "bottom"
+.main__footer
+  = render "footer"

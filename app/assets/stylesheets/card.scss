@@ -1,0 +1,209 @@
+.mypage{
+  height:100%;
+
+&__main__margin__right__credit{
+  background:#fff;
+
+  &__header{
+    font-size:24px;
+    padding:8px 24px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  &__regi{
+    padding:40px 40px 64px;
+  
+    &__card{
+      max-width: 343px;
+      margin:0 auto;
+
+      &__number__text{
+        display:flex;
+      
+        &__text1{
+          font-size:14px;
+          font-weight:bold;
+        }
+      
+        &__text2{
+          background: #ea352d;
+          margin: 0 0 5px 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+        }
+      }
+
+      &__day{
+        margin-top:32px;
+      
+        &__text{
+          display:flex;
+        }
+      
+        &__text1{
+          font-size:14px;
+          font-weight:bold;
+        }
+      
+        &__text2{
+          background: #ea352d;
+          margin: 0 0 5px 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+        }
+      
+        &__form{
+          display:flex;
+      
+          &__monthtext{
+            padding:15px;
+          }
+      
+          &__yeartext{
+            padding:15px;
+          }
+        }
+      }
+
+      &__security{
+        margin-top:32px;
+      
+        &__text{
+          display:flex;
+      
+          &__text1{
+            font-size:14px;
+            font-weight:bold;
+          }
+      
+          &__text2{
+            background: #ea352d;
+            margin: 0 0 5px 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &__submit{
+        margin-top:42px;
+      }
+    }
+  }
+}
+
+.number{
+  height:30px;
+  width:309px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.cvc{
+  height:30px;
+  width:309px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.question-size{
+  text-decoration: none;
+  color:#0099EB;
+  font-size:14px;
+  float:right;
+  margin-top:5px;
+}
+
+
+#exp_month,#exp_year{
+  height:50px;
+  width:100px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+#token_submit{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+
+
+//show
+&__main__margin__right__credit__number{
+  padding:64px;
+
+  &__form__header{
+    max-width: 320px;
+    margin: 0 auto;
+    font-weight:bold;
+  }
+
+  &__form__info{
+    max-width: 320px;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+&__main__margin__right__credit__link{
+  text-align: right;
+  padding-top:32px;
+}
+
+.visa-size{
+  width:50px;
+  height:30px;
+}
+
+.padding-credit{
+  padding:24px 0;
+}
+
+button{
+  padding: 4px 6px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+  font-size:14px;
+  float:right;
+}
+
+.credit-link{
+  text-decoration: none;
+  color:#0099EB;
+  font-size:14px;
+  cursor: pointer;
+}
+
+
+}

@@ -1,0 +1,93 @@
+.main__footer{
+  height:379px;
+  background-color:rgb(34, 34, 34);
+  color:white;
+  font-size:12px;
+  // padding: 0 20px 10px;
+  min-width:1068px;
+  width:100%;
+
+&__contents{
+  margin: 0 auto;
+  width:1020px;
+  display: flex;
+}
+
+&__contents__about,&__contents__guide,&__contents__privace,&__contents__country{
+  margin-top:18px;
+  padding-right:40px;
+}
+
+&__contents__about__title,&__contents__guide__title,&__contents__privace__title,&__contents__country__title{
+  font-size:16px;
+  font-weight:600;
+  line-height:1.4em;
+}
+
+&__contents__about__title__class__name,&__contents__guide__title__class__name,&__contents__privace__title__box__class__name,&__contents__privace__title__box__place__name,&__contents__country__title__class__name{
+  line-height:1.4em;
+  margin-top:16px;
+  color:gray;
+}
+
+&__contents__about__title__class__name__tag,&__contents__guide__title__class__name__tag,&__contents__privace__title__box__class__name__tag,&__contents__privace__title__box__place__name__tag,&__contents__country__title__class__name__tag{
+  color:gray;
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__twitter{
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__twitter__box{
+  font-size:30px;
+  color:white;
+  margin-top:30px;
+  padding-right:10px;
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__facebook__box{
+  font-size:30px;
+  color:white;
+  padding-left:10px;
+  text-decoration: none;
+}
+
+&__contents__privace__title__box__class{
+  width:191px;
+  padding-right:10px;
+}
+
+&__contents__privace__title__box__place{
+  width:191px;
+  padding-left:10px;
+}
+
+&__contents__privace__title__box{
+  display: flex;
+}
+
+&__logo{
+  width:1020px;
+  margin:30px auto 20px;
+}
+
+&__logo__box{
+  display: flex;
+}
+
+&__logo__box__logo {
+  width:150px;
+  height:33px;
+}
+
+&__logo__box__color{
+  width:100%;
+  text-align: center;
+  padding-top:15px;
+  margin-right:90px;
+  font-size:12px;
+}
+
+}

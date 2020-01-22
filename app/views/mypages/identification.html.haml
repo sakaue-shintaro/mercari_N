@@ -1,0 +1,243 @@
+.mypage
+  .header
+    = render "/items/header"
+
+  .mypage_panbox
+
+  .mypage__main
+    .mypage__main__margin
+      .mypage__main__margin__left 
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages" ,class:"mypage-text" do
+              マイページ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お知らせ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              やることリスト
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              いいね！一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品する
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 出品中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 売却済み
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 過去の取引
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ニュース一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              評価一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ガイド
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お問い合わせ
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head メルペイ
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              残高・振込申請
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ポイント
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head 設定
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to edit_user_path(current_user) ,class:"mypage-text" do
+              プロフィール
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              発生元・お届け先住所変更
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to card_index_path ,class:"mypage-text" do
+              支払い方法
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              メール/パスワード
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.bold-color
+            = link_to "/mypages/identification" ,class:"mypage-text" do
+              本人情報
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              電話番号の確認
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages/logout" ,class:"mypage-text" do
+              ログアウト
+              = icon('fas', 'chevron-right',  class: "right")
+
+
+      .mypage__main__margin__right
+        .mypage__main__margin__right__identification
+          .mypage__main__margin__right__identification__top 本人情報の登録
+          .mypage__main__margin__right__identification__form
+            .mypage__main__margin__right__identification__form__head1
+              お客さまの本人情報をご登録ください。
+            .mypage__main__margin__right__identification__form__head2
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            .mypage__main__margin__right__identification__form__head3
+              = link_to "#" ,class:"upload-color" do
+                本人確認書類のアップロードについて
+                = icon('fas', 'chevron-right')
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__top お名前
+              .mypage__main__margin__right__identification__form__group__under 
+                = current_user.last_name
+                = current_user.first_name 
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__top お名前カナ
+              .mypage__main__margin__right__identification__form__group__under
+                = current_user.last_name_kana
+                = current_user.first_name_kana
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__top 生年月日
+              .mypage__main__margin__right__identification__form__group__under.display
+                = current_user.birthdate_year
+                .slash /
+                = current_user.birthdate_month
+                .slash /
+                = current_user.birthdate_day
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__flex
+                .mypage__main__margin__right__identification__form__group__top 郵便番号
+                .mypage__main__margin__right__identification__form__group__any 任意
+              .mypage__main__margin__right__identification__form__group__input
+                %input{placeholder: "例）1234567", type: "text", class: "iden-size"}
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__flex
+                .mypage__main__margin__right__identification__form__group__top 都道府県
+                .mypage__main__margin__right__identification__form__group__any 任意
+              .mypage__main__margin__right__identification__form__group__select
+                %select{name:"year",class:"iden-select"}
+                  %option{value:""}--
+                  %option{value:"北海道"}北海道
+                  %option{value:"青森"}青森
+                  %option{value:"岩手"}岩手
+                  %option{value:"宮城"}宮城
+                  %option{value:"秋田"}秋田
+                  %option{value:"山形"}山形
+                  %option{value:"福島"}福島
+                  %option{value:"茨城"}茨城
+                  %option{value:"栃木"}栃木
+                  %option{value:"群馬"}群馬
+                  %option{value:"埼玉"}埼玉
+                  %option{value:"千葉"}千葉
+                  %option{value:"東京"}東京
+                  %option{value:"神奈川"}神奈川
+                  %option{value:"新潟"}新潟
+                  %option{value:"富山"}富山
+                  %option{value:"石川"}石川
+                  %option{value:"福井"}福井
+                  %option{value:"山梨"}山梨
+                  %option{value:"長野"}長野
+                  %option{value:"岐阜"}岐阜
+                  %option{value:"静岡"}静岡
+                  %option{value:"愛知"}愛知
+                  %option{value:"三重"}三重
+                  %option{value:"滋賀"}滋賀
+                  %option{value:"京都"}京都
+                  %option{value:"大阪"}大阪
+                  %option{value:"兵庫"}兵庫
+                  %option{value:"奈良"}奈良
+                  %option{value:"和歌山"}和歌山
+                  %option{value:"鳥取"}鳥取
+                  %option{value:"島根"}島根
+                  %option{value:"岡山"}岡山
+                  %option{value:"広島"}広島
+                  %option{value:"山口"}山口
+                  %option{value:"徳島"}徳島
+                  %option{value:"香川"}香川
+                  %option{value:"愛媛"}愛媛
+                  %option{value:"高知"}高知
+                  %option{value:"福岡"}福岡
+                  %option{value:"佐賀"}佐賀
+                  %option{value:"長崎"}長崎
+                  %option{value:"熊本"}熊本
+                  %option{value:"大分"}大分
+                  %option{value:"宮崎"}宮崎
+                  %option{value:"鹿児島"}鹿児島
+                  %option{value:"沖縄"}沖縄
+
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__flex
+                .mypage__main__margin__right__identification__form__group__top 市区町村
+                .mypage__main__margin__right__identification__form__group__any 任意
+              .mypage__main__margin__right__identification__form__group__input
+                %input{placeholder: "例）横浜市緑区", type: "text", class: "iden-size"}
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__flex
+                .mypage__main__margin__right__identification__form__group__top 番地
+                .mypage__main__margin__right__identification__form__group__any 任意
+              .mypage__main__margin__right__identification__form__group__input
+                %input{placeholder: "例）青山1-1-1", type: "text", class: "iden-size"}
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__flex
+                .mypage__main__margin__right__identification__form__group__top 建物名
+                .mypage__main__margin__right__identification__form__group__any 任意
+              .mypage__main__margin__right__identification__form__group__input
+                %input{placeholder: "例）柳ビル103", type: "text", class: "iden-size"}
+
+            
+            %button{type:"submit",class:"iden-button"}
+              登録する
+
+            .mypage__main__margin__right__identification__form__group
+              .mypage__main__margin__right__identification__form__group__upload
+                = link_to "#",class:"upload-color" do
+                  本人情報の登録について
+                  = icon('fas', 'chevron-right')
+
+  .main__bottom
+    = render "/items/bottom"
+  .main__footer
+    = render "/items/footer"
+  .main__saleButton
+    = link_to new_items_path do
+      = image_tag "salebutton2.png",class:"sale-size"

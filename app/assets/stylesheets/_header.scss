@@ -1,0 +1,151 @@
+.header{
+  width: 100%;
+  height:100px;
+  position:relative;
+}
+.headerBox{
+  background-color: rgb(255, 255, 255);
+}
+.headerBox__main{
+  width:1020px;
+  height:100%;
+  margin:0 auto;
+}
+
+.headerBox__main__search{
+  padding-top:8px;
+  display:flex;
+}
+
+.headerBox__main__search__logo__link__box{
+  height:36px;
+  width:134px;
+}
+
+.search-box {
+  background-color: #f5f5f5;
+  color:#434a54;
+  height: 38px;
+  width: 835px;
+  top: 6px;
+  padding: 0px 0px 0px 10px;
+  font-size: 16px;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 4px;
+  position: absolute;
+}
+
+.headerBox__main__search__input{
+  display:flex;
+}
+
+.headerBox__main__search__input__box{
+  width:841px;
+  height:40px;
+  padding-left:30px;
+}
+
+.search-icon{
+  position: absolute;
+  float:right;
+  padding:10px 0 0 820px;
+}
+
+input{
+  border-radius: 15px;
+}
+
+.headerBox__main__search__input__icon{
+  padding-top:8px;
+}
+
+.headerBox__main__bottom{
+  margin-top:10px;
+}
+
+.headerBox__main__bottom__select{
+  display:flex;
+  float:left;
+  &__category{
+    display: flex;
+    padding:0px 10px 0 0;
+    &__categorySearch,&__image{
+      display:flex;
+    }
+    &__categorySearch__list{
+      display:flex;
+      &__a{
+        color:black;
+      }
+    }
+  }
+  &__brand{
+    display: flex;
+    padding:0px 10px;
+    &__brandSearch,&__image{
+      display:flex;
+    }
+    &__brandSearch,&__list{
+      display:flex;
+    }
+  }
+}
+.headerBox__main__bottom__member{
+  display:flex;
+  float:right;
+  &__new__letter{
+    background-color:red;
+    color:white;
+    font-size: 0.9em;
+    width:106px;
+    height:32px;
+    padding:8px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right:10px;
+  }
+  &__login__moji{
+    background-color:white;
+    color:rgb(0, 149, 238);
+    text-decoration: none;
+    font-size: 0.9em;
+    width:106px;
+    height:32px;
+    padding:8px 10px;
+    border: solid 1px rgb(0, 149, 238);
+    border-radius: 5px;
+    margin-right:10px;
+  }
+
+.header-linkto{
+  text-decoration: none;
+  color:#434a54;
+  font-size:14px;
+}
+
+.header-icon-size{
+  font-size:2.5em;
+  vertical-align: middle;
+}
+
+.header-check-size{
+  font-size:1em;
+  padding-right:10px;
+}
+
+.headerBox__main__bottom__member__check{
+  margin:0 30px 0 0;
+  padding-top:5px;
+}
+
+.header-linkto:hover{
+  color:rgb(0, 149, 238);
+}
+
+.headerBox__main__bottom__member__login__moji:hover{
+  color:white;
+  background:rgb(0, 149, 238);
+}
+
+}
+

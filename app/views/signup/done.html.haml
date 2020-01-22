@@ -1,0 +1,54 @@
+.first-main
+  .first-main__header.width-size
+    .first-main__header__imgage
+      = link_to ".." do
+        = image_tag "fmarket_logo_red.svg",class:"first-main__header__imgage__size"
+    .first-main__header__bar
+      %ul.first-main__header__bar__ul
+        %li.first-main__header__bar__ul__box
+          .first-main__header__bar__ul__box__name 会員情報
+          .first-main__header__bar__ul__box__ten0000.redback
+        %li.first-main__header__bar__ul__box
+          .first-main__header__bar__ul__box__name 電話番号認証
+          .first-main__header__bar__ul__box__ten11111.redback
+        %li.first-main__header__bar__ul__box
+          .first-main__header__bar__ul__box__name お届け先住所入力
+          .first-main__header__bar__ul__box__ten22222.redback
+        %li.first-main__header__bar__ul__box
+          .first-main__header__bar__ul__box__name 支払い方法
+          .first-main__header__bar__ul__box__ten33333.redback
+        %li.first-main__header__bar__ul__box
+          .first-main__header__bar__ul__box__name__red 完了
+          .first-main__header__bar__ul__box__ten44444.redback
+
+  .first-main__box
+    .first-main__box__main
+      .first-main__box__main__title
+        会員登録完了
+      .first-main__box__main__form
+        .first-main__box__main__form__top
+          .first-main__box__main__form__top__final ありがとうございます。
+          .first-main__box__main__form__top__final 会員登録が完了しました。
+
+          .first-main__box__main__form__top__button
+            = link_to "..", class:"submit-scss" do
+              メルカリをはじめる
+
+  .first-main__image
+    .first-main__image__box
+      .first-main__image__box__left
+        .first-main__image__box__left__head ＼スマホでかんたんフリマアプリ／
+        .first-main__image__box__left__heading 今すぐ無料ダウンロード！
+        .first-main__image__box__left__flex
+          .first-main__image__box__left__flex__mercari
+            = image_tag  "logo_red.svg",class:"first-main__image__box__left__flex__mercari__size"
+          .first-main__image__box__left__flex__apple
+            =link_to "#" do
+              = image_tag  "https://i0.wp.com/iphone-media.net/wp-content/uploads/2016/11/duellinks03.png?fit=564%2C168",class:"first-main__image__box__left__flex__apple__size"
+          .first-main__image__box__left__flex__google
+            =link_to "#" do
+              =image_tag  "https://img.tsite.jp/r/app/img/download-google.gif",class:"first-main__image__box__left__flex__google__size"
+      .first-main__image__box__right
+        =image_tag  "https://cdn.pixabay.com/photo/2014/10/23/20/51/iphone-500291__480.jpg",class:"first-main__image__box__right__size"
+
+  = render "footer"

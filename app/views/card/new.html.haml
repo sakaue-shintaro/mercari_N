@@ -1,0 +1,191 @@
+.mypage
+  .header
+    = render "/items/header"
+
+  .mypage_panbox
+
+  .mypage__main
+    .mypage__main__margin
+      .mypage__main__margin__left 
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages" ,class:"mypage-text" do
+              マイページ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お知らせ
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              やることリスト
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              いいね！一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品する
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 出品中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              出品した商品 - 売却済み
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 取引中
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              購入した商品 - 過去の取引
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ニュース一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              評価一覧
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ガイド
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              お問い合わせ
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head メルペイ
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              残高・振込申請
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              ポイント
+              = icon('fas', 'chevron-right',  class: "right")
+        %h3.mypage__main__margin__left__head 設定
+        %ul.mypage__main__margin__left__ul
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to edit_user_path(current_user) ,class:"mypage-text" do
+              プロフィール
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              発生元・お届け先住所変更
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.bold-color
+            = link_to card_index_path ,class:"mypage-text" do
+              支払い方法
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              メール/パスワード
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages/identification" ,class:"mypage-text" do
+              本人情報
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "#" ,class:"mypage-text" do
+              電話番号の確認
+              = icon('fas', 'chevron-right',  class: "right")
+          %li.mypage__main__margin__left__ul__text.a
+            = link_to "/mypages/logout" ,class:"mypage-text" do
+              ログアウト
+              = icon('fas', 'chevron-right',  class: "right")
+
+
+      .mypage__main__margin__right
+        .mypage__main__margin__right__credit
+          .mypage__main__margin__right__credit__header クレジット情報入力
+          .mypage__main__margin__right__credit__regi
+            = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              .mypage__main__margin__right__credit__regi__card
+                .mypage__main__margin__right__credit__regi__card__number
+                  .mypage__main__margin__right__credit__regi__card__number__text
+                    .mypage__main__margin__right__credit__regi__card__number__text__text1
+                      カード番号
+                    .mypage__main__margin__right__credit__regi__card__number__text__text2
+                      必須
+                  .mypage__main__margin__right__credit__regi__card__number__form
+                    = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+                
+              
+                .mypage__main__margin__right__credit__regi__card__day
+                  .mypage__main__margin__right__credit__regi__card__day__text
+                    .mypage__main__margin__right__credit__regi__card__day__text1
+                      有効期限
+                    .mypage__main__margin__right__credit__regi__card__day__text2
+                      必須
+                  .mypage__main__margin__right__credit__regi__card__day__form
+                    .mypage__main__margin__right__credit__regi__card__day__form__month
+                      %select#exp_month{name: "exp_month", type: "text",class:"year-box"}
+                        %option{value: ""} --
+                        %option{value: "1"}01
+                        %option{value: "2"}02
+                        %option{value: "3"}03
+                        %option{value: "4"}04
+                        %option{value: "5"}05
+                        %option{value: "6"}06
+                        %option{value: "7"}07
+                        %option{value: "8"}08
+                        %option{value: "9"}09
+                        %option{value: "10"}10
+                        %option{value: "11"}11
+                        %option{value: "12"}12
+                    .mypage__main__margin__right__credit__regi__card__day__form__monthtext 月
+                    .mypage__main__margin__right__credit__regi__card__day__form__year
+                      %select#exp_year{name: "exp_year", type: "text"}
+                        %option{value: ""} --
+                        %option{value: "2019"}19
+                        %option{value: "2020"}20
+                        %option{value: "2021"}21
+                        %option{value: "2022"}22
+                        %option{value: "2023"}23
+                        %option{value: "2024"}24
+                        %option{value: "2025"}25
+                        %option{value: "2026"}26
+                        %option{value: "2027"}27
+                        %option{value: "2028"}28
+                        %option{value: "2029"}29
+                    .mypage__main__margin__right__credit__regi__card__day__form__yeartext 年
+                
+              
+                .mypage__main__margin__right__credit__regi__card__security
+                  .mypage__main__margin__right__credit__regi__card__security__text
+                    .mypage__main__margin__right__credit__regi__card__security__text__text1
+                      セキュリティコード
+                    .mypage__main__margin__right__credit__regi__card__security__text__text2
+                      必須
+                  .mypage__main__margin__right__credit__regi__card__security__form
+                    = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+               
+                  .mypage__main__margin__right__credit__regi__card__info
+                    = link_to "#" ,class:"question-size" do
+                      = icon('fas', 'question-circle',  class: "")
+                      カード裏面の番号とは？
+               
+                .mypage__main__margin__right__credit__regi__card__submit
+                #card_token
+                  = submit_tag "追加する", id: "token_submit"
+
+
+
+  .main__bottom
+    = render "/items/bottom"
+  .main__footer
+    = render "/items/footer"
+  .main__saleButton
+    = link_to new_items_path do
+      = image_tag "salebutton2.png",class:"sale-size"

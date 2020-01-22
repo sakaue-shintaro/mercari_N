@@ -1,0 +1,53 @@
+.headerBox
+  .headerBox__main
+    .headerBox__main__search
+      .headerBox__main__search__logo
+        =link_to "..",class:"headerBox__main__search__logo__link" do
+          = image_tag  "fmarket_logo_red.svg",class:"headerBox__main__search__logo__link__box"
+      .headerBox__main__search__input
+        .headerBox__main__search__input__box
+          = form_tag(searches_path,method: :get) do
+            %label
+              = text_field_tag :search, "",placeholder:"何かお探しですか？",class: "search-box"
+              %i.fas.fa-search{class: "search-icon"}
+              = submit_tag 'search', :name => nil
+    .headerBox__main__bottom
+      .headerBox__main__bottom__select
+        .headerBox__main__bottom__select__category
+          .headerBox__main__bottom__select__category__categorySearch
+            = image_tag('category.png',width:'30',height:'25')
+          .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
+        .headerBox__main__bottom__select__brand 
+          .headerBox__main__bottom__select__brand__brandSearch
+            = image_tag('brand.png',width:'30',height:'25')
+          .headerBox__main__bottom__select__brand__brandSearch__list__b  ブランドから探す
+      
+      
+      .headerBox__main__bottom__member
+        -if user_signed_in?
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('far', 'heart', class: "header-check-size")
+              いいね！一覧
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('far', 'bell', class: "header-check-size")
+              お知らせ
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('fas', 'check', class: "header-check-size")
+              やることリスト
+          .headerBox__main__bottom__member__mypage
+            =link_to "/mypages" ,class:"header-linkto" do
+              = icon('fas', 'user-circle', class: "header-icon-size")
+              マイページ
+  
+        -else
+          .headerBox__main__bottom__member__new
+            =link_to signup_index_path ,class:"headerBox__main__bottom__member__new__letter" do
+              新規会員登録
+          .headerBox__main__bottom__member__login
+            =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
+              ログイン
+
+

@@ -1,0 +1,160 @@
+.search
+  .header
+    = render "/items/header"
+
+  .search__main
+    .search__main__color
+      .search__main__color__left
+        = search_form_for(@q,url: detail_search_searches_path) do |f|
+          .search__main__color__left__select
+            = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()'} ,class:"default")
+  
+          .search__main__color__left__box.search-margin
+            .search__main__color__left__box__text
+              詳細検索
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'plus', class: "")
+                キーワードを追加する
+              = f.search_field :name_cont, placeholder: "例）値下げ", class: "search-input",value: "#{@search}"
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'list-ul', class: "")
+                カテゴリーを選択する
+              .ca-margin
+                %select{name:"default",class:"default"}
+                  %option{value:"すべて"}すべて
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'tags', class: "")
+                ブランド名から探す
+              = f.search_field :brandname_eq, placeholder: "例）シャネル", class: "search-input"
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('far', 'square', class: "")
+                サイズを指定する
+              .ca-margin
+                %select{name:"default",class:"default"}
+                  %option{value:"すべて"}すべて
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'coins', class: "")
+                価格
+              .ca-margin
+              .detail_search__group--forms
+                = f.search_field :price_gteq, placeholder: "¥ Min"
+                .text-line 〜
+                = f.search_field :price_lteq, placeholder: "¥ Max"
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'star', class: "")
+                商品の状態
+              .search__body
+                .search__body__left
+                  .search__main__color__left__box__form__check
+                    %input{type: "checkbox", class: "box-size"}
+                    すべて
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "2", nil
+                    = "未使用に近い"
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "4", nil
+                    = "やや傷や汚れあり"
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "6", nil
+                    = "全体的に状態が悪い"
+                .search__body__right
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "1", nil
+                    = "新品、未使用"
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "3", nil
+                    = "目立った傷や汚れなし"
+                  .search__main__color__left__box__form__check
+                    = f.check_box :condition_eq_any, { multiple: true }, "5", nil
+                    = "傷や汚れあり"
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'truck', class: "")
+                配送料の負担
+              .search__body
+                .search__body__left
+                  .search__main__color__left__box__form__check
+                    %input{type: "checkbox", class: "box-size"}
+                    すべて
+                  .search__main__color__left__box__form__check
+                    = f.check_box :burden_eq_any, { multiple: true }, "1", nil
+                    = "送料込み（出品者負担）"
+                .search__body__right
+                  .search__main__color__left__box__form__check
+                    = f.check_box :burden_eq_any, { multiple: true }, "2", nil
+                    = "着払い（購入者負担）"
+  
+            .search__main__color__left__box__form
+              .search__main__color__left__box__form__text
+                = icon('fas', 'truck', class: "")
+                販売状況
+              .search__body
+                .search__body__left
+                  .search__main__color__left__box__form__check
+                    %input{type: "checkbox", class: "box-size"}
+                    すべて
+                  .search__main__color__left__box__form__check
+                    %input{type: "checkbox", class: "box-size"}
+                    売り切れ
+                .search__body__right
+                  .search__main__color__left__box__form__check
+                    %input{type: "checkbox", class: "box-size"}
+                    販売中
+  
+            .search__main__color__left__box__btn
+              .search__main__color__left__box__btn__clear
+                クリア
+              .search__main__color__left__box__btn__submit
+                = f.submit "完了",class:"btn-red"
+            
+            
+          
+
+
+      .search__main__color__right
+        -if @search_item.present?
+          %h2.search__main__color__right__head
+            =@search_item.name_cont
+            %span.search__main__color__right__head__text
+              の検索結果
+
+          .search__main__color__right__number
+            ="1-#{@items.count}件表示"
+
+        -else
+          %h2.search__main__color__right__head
+            新着商品
+
+        .search__main__color__right__item
+          - @items.each do |item|
+            .main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image_url,size: "184x198"
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
+
+  .main__bottom
+    = render "/items/bottom"
+  .main__footer
+    = render "/items/footer"
+  .main__saleButton
+    = link_to new_items_path do
+      = image_tag "salebutton2.png",class:"sale-size"

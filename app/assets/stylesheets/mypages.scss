@@ -1,0 +1,529 @@
+// Place all the styles related to the mypages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mypage{
+  height:100%;
+
+&_panbox{
+  height:49px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+&__main{
+  background:rgb(239, 239, 239);
+  width:100%;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.16);
+}
+
+.bold-color{
+  background:#BBB;
+  font-weight:bold;
+}
+
+.a:hover{
+  background:#DDD;
+}
+
+&__main__margin{
+  width:1020px;
+  margin:0px auto 0;
+  background:rgb(239, 239, 239);
+  padding:40px 0;
+  display:flex;
+}
+
+&__main__margin__left{
+  margin-right:40px;
+  width:280px;
+}
+
+&__main__margin__left__ul__text{
+  font-size:14px;
+  padding:16px;
+  background:#fff;
+  border-bottom: solid 1px rgb(239, 239, 239);
+}
+
+.mypage-text{
+  text-decoration: none;
+  color:#333;
+  display: block;
+}
+
+.right{
+  float:right;
+}
+
+&__main__margin__left__head{
+  font-size:16px;
+  font-weight:bold;
+  margin:40px 0 8px;
+}
+
+&__main__margin__right{
+  height:100%;
+  width:700px;
+}
+
+&__main__margin__right__header{
+  height:160px;
+  background-image:url("https://cdn.pixabay.com/photo/2019/10/29/14/46/landscape-4587079__480.jpg");
+  padding:20px;
+}
+
+&__main__margin__right__header__image{
+  text-align: center;
+  padding-top:20px;
+}
+
+.mypage-header{
+  text-decoration: none;
+  color:#333;
+  display: block;
+}
+
+.human-icon{
+  font-size:4em;
+}
+
+&__main__margin__right__header__image__text{
+  display:flex;
+  margin-left:270px;
+}
+
+&__main__margin__right__header__image__text__eva{
+  margin-right:10px;
+}
+
+&__main__margin__right__header__image__text{
+  font-weight: bold;
+}
+
+&__main__margin__right__header__image__user{
+  padding:5px 0;
+  font-weight: bold;
+}
+
+&__main__margin__right__news__text{
+  display:flex;
+}
+
+&__main__margin__right__news__text__le{
+  width:50%;
+  height:54px;
+  background:#888;
+  text-align: center;
+  padding-top:20px;
+}
+
+.mypage__main__margin__right__news__text__le.is-active.is-active{
+  background:#fff;
+  border-top: solid 2px #ea352d;
+}
+
+&__main__margin__right__news__main{
+  height:100%;
+  background:#fff;
+}
+
+&__main__margin__right__news__main__ul__box{
+  height:46px;
+  padding:16px;
+  border-bottom: solid 1px rgb(239, 239, 239);
+  display:flex;
+}
+
+.mypage__main__margin__right__news__main__ul{
+  display:none;
+}
+
+.mypage__main__margin__right__news__main__ul.is-show{
+  display:block;
+}
+
+&__main__margin__right__news__footer{
+  margin-top:40px;
+}
+
+&__main__margin__right__news__footer__header{
+  height:52px;
+  padding:0 16px;
+  background:#fff;
+  padding-top:20px;
+  font-weight: bold;
+}
+
+
+&__main__margin__right__news__footer__text{
+  display:flex;
+}
+
+&__main__margin__right__news__footer__text__le{
+  width:50%;
+  height:54px;
+  background:#888;
+  text-align: center;
+  padding-top:20px;
+}
+
+.mypage__main__margin__right__news__footer__text__le.ls-active{
+  background:#fff;
+  border-top: solid 2px #ea352d;
+}
+
+&__main__margin__right__news__footer__main{
+  height:100%;
+  background:#fff;
+}
+
+&__main__margin__right__news__footer__main__ul__box{
+  height:46px;
+  padding:16px;
+  border-bottom: solid 1px rgb(239, 239, 239);
+}
+
+.mypage__main__margin__right__news__footer__main__ul{
+  display:none;
+}
+
+.mypage__main__margin__right__news__footer__main__ul.le-show{
+  display:block;
+}
+
+&__main__margin__right__news__footer{
+  margin-top:40px;
+}
+
+&__main__margin__right__news__footer__header{
+  height:52px;
+  padding:0 16px;
+  background:#fff;
+  padding-top:20px;
+  font-weight: bold;
+}
+
+&__main__margin__right__news__main__ul__box__image{
+  height:27px;
+  width:32px;
+  padding:10px;
+  background:#EEE;
+}
+
+.image-size-tag{
+  width:30px;
+  height:30px;
+}
+
+&__main__margin__right__news__main__ul__box__text{
+  margin-left:20px;
+}
+
+.right-box{
+  padding-top:15px;
+  margin-left:200px;
+}
+
+.right-boxes{
+  padding-top:15px;
+  margin-left:90px;
+}
+
+&__main__margin__right__news__main__ul__box__text__under__box{
+  font-size:14px;
+  background:#888;
+  width:56px;
+  padding:5px;
+  height:20px;
+  margin-left:10px;
+  color:#fff;
+}
+
+&__main__margin__right__news__main__ul__box__color{
+  width:100%;
+  text-align: center;
+  background:#BBB;
+  color:#888;
+  padding-top:10px;
+}
+
+.b:hover{
+  background:#eee;
+}
+
+.height{
+  height:236px;
+  width:700px;
+}
+
+.backimage-size{
+  height:150px;
+  width:150px;
+  padding:10px 0 0 20px;
+}
+
+.padding{
+  width:200px;
+  margin:0 auto;
+}
+
+//本人情報の登録
+
+&__main__margin__right__identification__top{
+  font-size:24px;
+  padding:8px 24px;
+  background:#fff;
+  border-bottom: solid 1px rgb(239, 239, 239);
+  text-align: center;
+  color:#333;
+}
+
+&__main__margin__right__identification__form{
+  padding:64px;
+  background:#fff;
+  color:#333;
+}
+
+&__main__margin__right__identification__form__head1{
+  margin-top:8px;
+  font-size:14px;
+}
+
+&__main__margin__right__identification__form__head2{
+  font-size:14px;
+}
+
+&__main__margin__right__identification__form__head3{
+  float:right;
+  font-size:14px;
+  margin-top:8px;
+}
+
+&__main__margin__right__identification__form__group__upload{
+  text-align:right;
+  margin-top:140px;
+}
+
+.upload-color{
+  text-decoration: none;
+  color:#0099EB;
+  font-size:14px;
+}
+
+&__main__margin__right__identification__form__group{
+  margin-top:40px;
+}
+
+&__main__margin__right__identification__form__group__top{
+  font-size:14px;
+  font-weight: bold;
+}
+
+&__main__margin__right__identification__form__group__under{
+  font-size:14px;
+  margin-top:8px;
+}
+
+&__main__margin__right__identification__form__group__flex{
+  display:flex;
+}
+
+&__main__margin__right__identification__form__group__any{
+  font-size:11px;
+  background:#BBB;
+  padding:2px 4px;
+  color:#fff;
+  border-radius: 2px;
+  margin-left:10px;
+}
+
+.iden-size{
+  width:540px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+&__main__margin__right__identification__form__group__input{
+  margin-top:8px;
+}
+
+&__main__margin__right__identification__form__group__select{
+  margin-top:8px;
+}
+
+.iden-select{
+  height:42px;
+  width:100%;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.iden-button{
+  background:#ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  font-size: 14px;
+  width:100%;
+  line-height: 48px;
+  cursor: pointer;
+  margin-top:40px;
+}
+
+.right{
+  float:right;
+}
+
+.display{
+  display:flex;
+}
+
+//プロフィール
+
+&__main__margin__right__profile__top{
+  font-size:24px;
+  padding:8px 24px;
+  background:#fff;
+  border-bottom: solid 1px rgb(239, 239, 239);
+  text-align: center;
+  color:#333;
+  font-weight: bold;
+}
+
+&__main__margin__right__profile__form__backimage{
+  padding: 72px 16px 24px;
+  text-align: center;
+  background-image:url("https://cdn.pixabay.com/photo/2019/10/29/14/46/landscape-4587079__480.jpg");
+}
+
+.pro-icon{
+  font-size:3.5em;
+  vertical-align: middle;
+}
+
+.pro-input{
+  width:188px;
+  margin: 0 0 0 8px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+}
+
+&__main__margin__right__profile__field{
+  padding: 40px 16px;
+  background: #fff;
+}
+
+.pro-textarea{
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  width:96.5%;
+  min-height: 196px;
+}
+
+&__main__margin__right__profile__field__button{
+  margin-top:16px;
+}
+
+
+//支払い方法
+
+&__main__margin__right__card__top{
+  font-size:24px;
+  padding:8px 24px;
+  background:#fff;
+  border-bottom: solid 1px rgb(239, 239, 239);
+  text-align: center;
+  color:#333;
+  font-weight: bold;
+}
+
+&__main__margin__right__card__form{
+  padding:64px;
+  background:#fff;
+}
+
+&__main__margin__right__card__form__top__text{
+  font-weight: bold;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.card-flex{
+  display:flex;
+  text-decoration: none;
+  color:#fff;
+  background:#ea352d;
+  padding:15px 30px;
+  width:250px;
+}
+
+&__main__margin__right__card__form__bottom{
+  padding:24px 0;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+&__main__margin__right__card__form__bottom__text{
+  margin-left:20px;
+}
+
+&__main__margin__right__card__form__under{
+  padding-top:32px;
+  border-top: solid 1px rgb(239, 239, 239);
+}
+
+.card-icon{
+  text-decoration: none;
+  color:#0099EB;
+  float:right;
+  font-size:14px;
+}
+
+.card-flex:hover{
+  opacity:0.7;
+}
+
+//ログアウト
+
+&__main__margin__right__logout{
+  background:#fff;
+  padding:64px;
+  border-top: 1px solid #f5f5f5;
+}
+
+
+&__main__margin__right__logout__content{
+  background:#ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 48px;
+  text-align: center;
+  width:320px;
+  margin:0 auto;
+}
+
+.button{
+  text-decoration: none;
+  color: #fff;
+}
+
+&__main__margin__right__logout__content:hover{
+  opacity:0.7;
+}
+}

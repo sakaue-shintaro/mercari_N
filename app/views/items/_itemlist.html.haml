@@ -1,0 +1,121 @@
+.main__item__header
+  .main__item__header__heading 人気のカテゴリー
+  .main__item__header__list
+    .main__item__header__list__women 
+      .main__item__header__list__women__box
+        =link_to "#women__id" ,class:"main__item__header__list__women__box__tag" do
+          レディース
+    .main__item__header__list__men 
+      .main__item__header__list__men__box
+        =link_to "#men__id" ,class:"main__item__header__list__men__box__tag" do
+          メンズ
+.main__item__box
+  .main__item__box__list
+    .main__item__box__list__women
+      .main__item__box__list__women__header
+        .main__item__box__list__women__header__title
+          #women__id
+            レディース新着アイテム
+        .main__item__box__list__women__header__details 
+          =link_to "#", class:"main__item__box__list__women__header__details__tag" do
+            もっとみる ＞
+      %ul.main__item__box__list__women__item
+        - @items.order('created_at DESC').each do |item|
+          -@ladies_grandchild.each do |lady|
+            - if item.category_id == lady.id
+              %li.main__item__box__list__women__item__box
+                .main__item__box__list__women__item__box__in
+                  =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                    .main__item__box__list__women__item__box__image
+                      = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
+                      .main__item__box__list__women__item__box__image__place            
+                        .main__item__box__list__women__item__box__image__place__language
+                          ¥#{item.price.to_s(:delimited)}
+                    .main__item__box__list__women__item__box__text
+                      .main__item__box__list__women__item__box__text__language
+                        = item.name
+
+    .main__item__box__list__women
+      .main__item__box__list__women__header
+        .main__item__box__list__women__header__title
+          #men__id
+            メンズ新着アイテム
+        .main__item__box__list__women__header__details
+          =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
+            もっとみる ＞
+      %ul.main__item__box__list__women__item
+        - @items.order('created_at DESC').each do |item|
+          -@men_grandchild.each do |men|
+            - if item.category_id == men.id
+              %li.main__item__box__list__women__item__box
+                .main__item__box__list__women__item__box__in
+                  =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                    .main__item__box__list__women__item__box__image
+                      = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
+                      .main__item__box__list__women__item__box__image__place            
+                        .main__item__box__list__women__item__box__image__place__language
+                          ¥#{item.price.to_s(:delimited)}
+                    .main__item__box__list__women__item__box__text
+                      .main__item__box__list__women__item__box__text__language
+                        = item.name
+
+
+.main__item__header
+  .main__item__header__heading 人気のブランド
+  .main__item__header__list
+    .main__item__header__list__women 
+      .main__item__header__list__women__box
+        =link_to "#syanel__id" ,class:"main__item__header__list__women__box__tag" do
+          シャネル
+    .main__item__header__list__men 
+      .main__item__header__list__men__box
+        =link_to "#naiki__id" ,class:"main__item__header__list__men__box__tag" do
+          ナイキ
+.main__item__box
+  .main__item__box__list
+    .main__item__box__list__women
+      .main__item__box__list__women__header
+        .main__item__box__list__women__header__title
+          #syanel__id
+            シャネル新着アイテム
+        .main__item__box__list__women__header__details 
+          =link_to "#" , class:"main__item__box__list__women__header__details__tag" do
+            もっとみる ＞
+      %ul.main__item__box__list__women__item
+        - @items.order('created_at DESC').each do |item|
+          - if item.brandname == "シャネル"
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
+
+    .main__item__box__list__women
+      .main__item__box__list__women__header
+        .main__item__box__list__women__header__title
+          #naiki__id
+            ナイキ新着アイテム
+        .main__item__box__list__women__header__details
+          =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
+            もっとみる ＞
+      %ul.main__item__box__list__women__item
+        - @items.order('created_at DESC').each do |item|
+          - if item.brandname == "ナイキ"
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
+

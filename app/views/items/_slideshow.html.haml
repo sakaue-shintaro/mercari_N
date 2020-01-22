@@ -1,0 +1,11 @@
+.slideshow-slides
+  = link_to image_tag('noname.png',width:'106%'),'./', class:'slide'
+  = link_to image_tag('camping.png',width:'106%'),'./', class:'slide'
+  = link_to image_tag('apri.png',width:'106%'),'./', class:'slide'
+.slideshow-nav
+  = link_to './', class: 'prev' do
+    %li.fa.fa-angle-left.fa-3x.fa-right
+  = link_to './', class: 'next' do
+    %li.fa.fa-angle-right.fa-3x.fa-left
+.slideshow-indicator
+  = link_to 
